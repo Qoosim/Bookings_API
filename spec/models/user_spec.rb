@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
 
   # Association tests
   it { should have_many(:appointments).dependent(:destroy) }
-  it { should have_many(:bikes).dependent(:destroy) } 
+  it { should have_many(:bikes) } 
   
    # Validation tests
   it { should validate_presence_of(:username) }
