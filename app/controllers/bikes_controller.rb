@@ -3,13 +3,14 @@ class BikesController < ApplicationController
 
   # GET /bikes
   def index
-    @bikes = Bike.all
+    @bikes = Bikes.all
     json_response(@bikes)
   end
 
   # POST /bikes
   def create
-    @bike = Bike.create!(bike_params)
+    # create bikes belonging to current user
+    @bike = Bikes.build(bike_params)
     json_response(@bike, :created)
   end
 

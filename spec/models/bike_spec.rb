@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Bike, type: :model do
   # Association tests
-  it { should have_many(:appointment).dependent(:destroy) }
-  it { should have_many(:users) } 
+  it { should have_many(:appointments).dependent(:destroy) }
+  it { should have_many(:users) }
   
   # Validation tests
   it { should validate_presence_of(:model) }

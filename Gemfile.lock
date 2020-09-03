@@ -79,6 +79,7 @@ GEM
     hirb (0.7.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -184,6 +185,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.1)
   faker
   hirb
+  jwt
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
