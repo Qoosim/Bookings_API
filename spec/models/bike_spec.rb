@@ -12,4 +12,6 @@ RSpec.describe Bike, type: :model do
   it { should validate_presence_of(:price) }
   it { should validate_presence_of(:engine_capacity) }
   it { should validate_presence_of(:weight) }
+  it { should validate_presence_of(:user_id) }
+
 end

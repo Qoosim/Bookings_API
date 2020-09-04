@@ -4,7 +4,7 @@ RSpec.describe "Bikes API", type: :request do
     # initialize test data
     # Add bike owner
     let(:user) { create(:user) }
-    let!(:bikes) { create_list(:bike, 5) }
+    let!(:bikes) { create_list(:bike, 5, user_id: user.id) }
     let(:bike_id) { bikes.first.id }
     # Authorize request
     let(:headers) { valid_headers }
@@ -58,7 +58,7 @@ RSpec.describe "Bikes API", type: :request do
       # valid payload
       # send json payload
       let(:valid_attributes) { { model: 'Classic 350', color: 'red', price: '$700000',
-                                 weight: '192kg', engine_capacity: '346.0 CC' }.to_json }
+                                 weight: '192kg', engine_capacity: '346.0 CC', user_id: 1 }.to_json }
   
       context 'when the request is valid' do
         before { post '/v1/bikes', params: valid_attributes, headers: headers }
@@ -81,7 +81,7 @@ RSpec.describe "Bikes API", type: :request do
         end
   
         it 'returns a validation failure message' do
-          expect(json['message']).to match(/Validation failed: Model can't be blank/)
+          expect(json['message']).to match(/Validation failed: User must exist, Model can't be blank, Color can't be blank, Price can't be blank, Weight can't be blank, Engine capacity can't be blank/)
         end
       end
     end

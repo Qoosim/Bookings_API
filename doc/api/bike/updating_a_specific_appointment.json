@@ -1,0 +1,73 @@
+{
+  "resource": "Bike",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/v1/appointments/:id",
+  "description": "Updating a specific appointment",
+  "explanation": "Updates a new b requires an admin user to be logged in",
+  "parameters": [
+    {
+      "name": "user_id",
+      "description": "Login User"
+    },
+    {
+      "name": "bike_id",
+      "description": "Chosen bike by the user"
+    },
+    {
+      "name": "date",
+      "description": "Day of the appointment"
+    },
+    {
+      "name": "time",
+      "description": "Time of the appointment"
+    },
+    {
+      "name": "location",
+      "description": "Where to try the bike to"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/v1/appointments/1",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/v1/appointments/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "PUT",
+      "request_path": "/v1/appointments/1",
+      "request_body": "{\"user_id\":\"1\",\"bike_id\":\"1\",\"date\":\"2020/09/07\",\"time\":\"02:00\",\"location\":\"Ibadan\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/v1/appointments/1\" -d '{\"user_id\":\"1\",\"bike_id\":\"1\",\"date\":\"2020/09/07\",\"time\":\"02:00\",\"location\":\"Ibadan\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

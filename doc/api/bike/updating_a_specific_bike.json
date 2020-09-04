@@ -1,0 +1,61 @@
+{
+  "resource": "Bike",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/v1/bikes/:id",
+  "description": "Updating a specific Bike",
+  "explanation": "Updates a new bike requires an admin user to be logged in",
+  "parameters": [
+    {
+      "name": "name",
+      "description": "Bike name"
+    },
+    {
+      "name": "user_id",
+      "description": "Admin User id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/v1/bikes/1",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/v1/bikes/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "PUT",
+      "request_path": "/v1/bikes/1",
+      "request_body": "{\"name\":\"Vespa\",\"user_id\":\"1\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/v1/bikes/1\" -d '{\"name\":\"Vespa\",\"user_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

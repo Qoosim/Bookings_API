@@ -1,0 +1,72 @@
+{
+  "resources": [
+    {
+      "name": "Bike",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Listing appointments",
+          "link": "bike/listing_appointments.json",
+          "groups": "all",
+          "route": "/v1/appointments",
+          "method": "get"
+        },
+        {
+          "description": "Getting an appointment",
+          "link": "bike/getting_an_appointment.json",
+          "groups": "all",
+          "route": "/v1/appointments/:id",
+          "method": "get"
+        },
+        {
+          "description": "Updating a specific appointment",
+          "link": "bike/updating_a_specific_appointment.json",
+          "groups": "all",
+          "route": "/v1/appointments/:id",
+          "method": "put"
+        },
+        {
+          "description": "Listing bikes",
+          "link": "bike/listing_bikes.json",
+          "groups": "all",
+          "route": "/v1/bikes",
+          "method": "get"
+        },
+        {
+          "description": "Getting a bike",
+          "link": "bike/getting_a_bike.json",
+          "groups": "all",
+          "route": "/v1/bikes/:id",
+          "method": "get"
+        },
+        {
+          "description": "Updating a specific Bike",
+          "link": "bike/updating_a_specific_bike.json",
+          "groups": "all",
+          "route": "/v1/bikes/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Creating a new  User",
+          "link": "authentication/creating_a_new_user.json",
+          "groups": "all",
+          "route": "/signup",
+          "method": "post"
+        },
+        {
+          "description": "Creating a new token",
+          "link": "authentication/creating_a_new_token.json",
+          "groups": "all",
+          "route": "/auth/login",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}

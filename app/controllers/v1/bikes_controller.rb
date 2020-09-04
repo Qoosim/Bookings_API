@@ -42,7 +42,8 @@ class V1::BikesController < ApplicationController
         :color,
         :price,
         :weight,
-        :engine_capacity
+        :engine_capacity,
+        :user_id
       )
     end
 
@@ -50,7 +51,11 @@ class V1::BikesController < ApplicationController
       @bike = Bike.find(params[:id])
     end
 
-    # def check_if_admin
-    #   raise(ExceptionHandler::AuthenticationError, Message.notallowed) unless current_user.admin
-    # end
+    def check_if_admin
+      raise(ExceptionHandler::AuthenticationError, Message.notallowed) unless current_user.admin
+    end
+
+    # def require_admin
+    #   render json: { error: "You have no right!" } unless current_user.admin == true
+    # end 
 end

@@ -9,7 +9,7 @@ class V1::AppointmentsController < ApplicationController
 
   # POST /appointments
   def create
-    @appointment = Appointment.build(appointment_params)
+    @appointment = Appointment.create!(appointment_params)
     json_response(@appointment, :created)
   end
 
