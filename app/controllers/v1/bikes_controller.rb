@@ -1,5 +1,7 @@
 class V1::BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :update, :destroy]
+  before_action :set_bike, only: %i[show update destroy]
+  skip_before_action :authorize_request, only: %i[index show]
+  # before_action :check_if_admin, only: %i[create update destroy]
 
   # GET /bikes
   def index
@@ -44,7 +46,11 @@ class V1::BikesController < ApplicationController
       )
     end
 
-  def set_bike
-    @bike = Bike.find(params[:id])
-  end
+    def set_bike
+      @bike = Bike.find(params[:id])
+    end
+
+    # def check_if_admin
+    #   raise(ExceptionHandler::AuthenticationError, Message.notallowed) unless current_user.admin
+    # end
 end

@@ -10,9 +10,9 @@ RSpec.describe "Bikes", type: :request do
     let(:headers) { valid_headers }
   
     # Test suite for GET /bikes
-    describe 'GET /bikes' do
+    describe 'GET /v1/bikes' do
       # make HTTP get request before each example
-      before { get '/bikes', params: {}, headers: headers }
+      before { get '/v1/bikes', params: {}, headers: headers }
   
       it 'returns bikes' do
         # Note `json` is a custom helper to parse JSON responses
@@ -26,8 +26,8 @@ RSpec.describe "Bikes", type: :request do
     end
   
     # Test suite for GET /bikes/:id
-    describe 'GET /bikes/:id' do
-      before { get "/bikes/#{bike_id}", params: {}, headers: headers }
+    describe 'GET /v1/bikes/:id' do
+      before { get "/v1/bikes/#{bike_id}", params: {}, headers: headers }
   
       context 'when the record exists' do
         it 'returns the user' do
@@ -54,14 +54,14 @@ RSpec.describe "Bikes", type: :request do
     end
   
     # Test suite for POST /bikes
-    describe 'POST /bikes' do
+    describe 'POST /v1/bikes' do
       # valid payload
       # send json payload
       let(:valid_attributes) { { model: 'Classic 350', color: 'red', price: '$700000',
                                  weight: '192kg', engine_capacity: '346.0 CC' }.to_json }
   
       context 'when the request is valid' do
-        before { post '/bikes', params: valid_attributes, headers: headers }
+        before { post '/v1/bikes', params: valid_attributes, headers: headers }
   
         it 'creates a bike' do
           expect(json['model']).to eq('Classic 350')
@@ -74,7 +74,7 @@ RSpec.describe "Bikes", type: :request do
   
       context 'when the request is invalid' do
         let(:invalid_attributes) { { model: nil }.to_json }
-        before { post '/bikes', params: {}, headers: headers }
+        before { post '/v1/bikes', params: invalid_attributes, headers: headers }
   
         it 'returns status code 422' do
           expect(response).to have_http_status(422)
@@ -87,11 +87,11 @@ RSpec.describe "Bikes", type: :request do
     end
   
     # Test suite for PUT /bikes/:id
-    describe 'PUT /bikes/:id' do
+    describe 'PUT /v1/bikes/:id' do
       let(:valid_attributes) { { model: 'Classic 350' }.to_json }
   
       context 'when the record exists' do
-        before { put "/bikes/#{bike_id}", params: valid_attributes, headers: headers }
+        before { put "/v1/bikes/#{bike_id}", params: valid_attributes, headers: headers }
   
         it 'updates the record' do
           expect(response.body).to be_empty
@@ -104,8 +104,8 @@ RSpec.describe "Bikes", type: :request do
     end
   
     # Test suite for DELETE /bikes/:id
-    describe 'DELETE /bikes/:id' do
-      before { delete "/bikes/#{bike_id}", params: {}, headers: headers }
+    describe 'DELETE /v1/bikes/:id' do
+      before { delete "/v1/bikes/#{bike_id}", params: {}, headers: headers }
   
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
