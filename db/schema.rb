@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_144532) do
+ActiveRecord::Schema.define(version: 2020_09_04_162053) do
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "bike_id", null: false
     t.string "date"
     t.string "time"
@@ -21,7 +20,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_144532) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bike_id"], name: "index_appointments_on_bike_id"
-    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "bikes", force: :cascade do |t|
@@ -32,6 +30,8 @@ ActiveRecord::Schema.define(version: 2020_09_04_144532) do
     t.string "engine_capacity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,5 +43,5 @@ ActiveRecord::Schema.define(version: 2020_09_04_144532) do
   end
 
   add_foreign_key "appointments", "bikes"
-  add_foreign_key "appointments", "users"
+  add_foreign_key "bikes", "users"
 end

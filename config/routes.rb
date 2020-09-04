@@ -6,12 +6,11 @@ Rails.application.routes.draw do
   concern :api_base do
     resources :bikes, :appointments
   end
-
   namespace :v1 do
     concerns :api_base
   end
   resources :users, only:  :create
-
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
+  mount Raddocs::App => "/api_docs"
 end
