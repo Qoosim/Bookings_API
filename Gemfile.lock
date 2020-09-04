@@ -106,6 +106,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -216,6 +217,7 @@ DEPENDENCIES
   hirb
   jwt
   listen (~> 3.2)
+  pg
   puma (~> 4.1)
   raddocs (~> 2.2)
   rails (~> 6.0.3, >= 6.0.3.2)
