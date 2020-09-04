@@ -11,7 +11,7 @@ class V1::BikesController < ApplicationController
   # POST /bikes
   def create
     # create bikes belonging to current user
-    @bike = Bike.create(bike_params)
+    @bike = Bike.create!(bike_params)
     json_response(@bike, :created)
   end
 
@@ -35,7 +35,6 @@ class V1::BikesController < ApplicationController
   private
 
     def bike_params
-      # whitelist params
       params.permit(
         :model, 
         :color,

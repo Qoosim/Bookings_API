@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :appointment do
-    user_id { "#{user_id}" }
-    bike_id { "#{bike_id}" }
     date { Faker::Date.date }
     time { Faker::Time.time }
-    location { 'Lagos Island' }
+    location { Faker::Providers.geo }
+    user_id { nil }
+    bike_id { nil }
+    # bike_id { "#{bike_id}" }
   end
 end
