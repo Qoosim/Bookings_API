@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Bikes", type: :request do
+RSpec.describe "Bikes API", type: :request do
     # initialize test data
     # Add bike owner
     let(:user) { create(:user) }
