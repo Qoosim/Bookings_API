@@ -21,4 +21,4 @@
 
 <!-- About the Project -->
 ## About The Project
-[![asciicast][product-screenshot]]
+![screenshot](app/assets/images/list_of_bikes.jpeg)
