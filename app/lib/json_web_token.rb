@@ -6,12 +6,14 @@ class JsonWebToken
     # set expiry to 24 hours from creation time
     payload[:exp] = exp.to_i
     # sign token with application secret
-    JWT.encode(payload, HMAC_SECRET)
+    # JWT.encode(payload, HMAC_SECRET) I changed HMAC_SECRET manually
+    JWT.encode(payload, 'haywire')
   end
 
   def self.decode(token)
     # get payload; first index in decoded Array
-    body = JWT.decode(token, HMAC_SECRET)[0]
+    # body = JWT.decode(token, HMAC_SECRET)[0] I changed HMAC_SECRET manually
+    body = JWT.decode(token, 'haywire')[0]
     HashWithIndifferentAccess.new body
     # rescue from all decode errors
   rescue JWT::DecodeError => e
