@@ -23,7 +23,7 @@
 ## 📽️ About The Project
 ![screenshot](app/assets/images/list_of_bikes.jpeg)
 
-This is a bookings API which is based on an app to book an appointment to try a bike by a logged-in user. Only the admin users can manage the creation, updating and destroying bikes.
+This is a bookings API which is based on an app to book an appointment to try a bike by a logged-in user. Only admin users can manage the creation, updating, and destroying bikes.
 
 ### 🥡 Get Started
 To get a local copy up and running follow the steps below.
