@@ -58,10 +58,13 @@ RSpec.describe "Bikes API", type: :request do
       # valid payload
       # send json payload
       let(:valid_attributes) { { model: 'Classic 350', color: 'red', price: '$700000',
-                                 weight: '192kg', engine_capacity: '346.0 CC', user_id: 1 }.to_json }
+                                 weight: '192kg', engine_capacity: '346.0 CC', user_id: user.id }.to_json }
   
       context 'when the request is valid' do
-        before { post '/v1/bikes', params: valid_attributes, headers: headers }
+        before do
+          user.to_admin 
+          post '/v1/bikes', params: valid_attributes, headers: headers
+        end
   
         it 'creates a bike' do
           expect(json['model']).to eq('Classic 350')
@@ -73,25 +76,31 @@ RSpec.describe "Bikes API", type: :request do
       end
   
       context 'when the request is invalid' do
-        let(:invalid_attributes) { { model: nil }.to_json }
-        before { post '/v1/bikes', params: invalid_attributes, headers: headers }
+        let(:invalid_attributes) { { model: nil, user_id: user.id }.to_json }
+        before do
+          user.to_admin 
+          post '/v1/bikes', params: invalid_attributes, headers: headers
+        end
   
         it 'returns status code 422' do
           expect(response).to have_http_status(422)
         end
   
         it 'returns a validation failure message' do
-          expect(json['message']).to match(/Validation failed: User must exist, Model can't be blank, Color can't be blank, Price can't be blank, Weight can't be blank, Engine capacity can't be blank/)
+          expect(json['message']).to match(/Validation failed: Model can't be blank, Color can't be blank, Price can't be blank, Weight can't be blank, Engine capacity can't be blank/)
         end
       end
     end
   
     # Test suite for PUT /bikes/:id
     describe 'PUT /v1/bikes/:id' do
-      let(:valid_attributes) { { model: 'Classic 350' }.to_json }
+      let(:valid_attributes) { { model: 'Classic 350', user_id: user.id }.to_json }
   
       context 'when the record exists' do
-        before { put "/v1/bikes/#{bike_id}", params: valid_attributes, headers: headers }
+        before do
+          user.to_admin
+          put "/v1/bikes/#{bike_id}", params: valid_attributes, headers: headers
+        end
   
         it 'updates the record' do
           expect(response.body).to be_empty
@@ -105,7 +114,10 @@ RSpec.describe "Bikes API", type: :request do
   
     # Test suite for DELETE /bikes/:id
     describe 'DELETE /v1/bikes/:id' do
-      before { delete "/v1/bikes/#{bike_id}", params: {}, headers: headers }
+      before do
+        user.to_admin 
+        delete "/v1/bikes/#{bike_id}", params: {}, headers: headers
+      end
   
       it 'returns status code 204' do
         expect(response).to have_http_status(204)

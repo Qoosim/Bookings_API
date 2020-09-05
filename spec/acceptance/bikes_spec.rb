@@ -7,7 +7,7 @@ resource 'Bike', acceptance: true do
   before do
     header 'Content-Type', 'application/json'
     header 'Authorization', token_generator(user.id)
-    # user.to_admin
+    user.to_admin
   end
 
   get '/v1/bikes' do
@@ -30,12 +30,16 @@ resource 'Bike', acceptance: true do
   post '/v1/bikes' do
     route_summary 'This is used to create bikes.'
 
-    parameter :name, 'Bike name'
-    parameter :user_id, 'Admin User id'
+    parameter :model, 'Bike model'
+    parameter :color, 'Bike color'
+    parameter :price, 'Bike price'
+    parameter :weight, 'Bike weight'
+    parameter :engine_capacity, 'Bike engine capacity'
+    parameter :user_id, 'Admin id'
 
     example_request 'Creating a new bike' do
       explanation 'Creates a new bike requires an admin user to be logged in'
-      do_request(name: 'Yamaha', user_id: user.id.to_s)
+      do_request(model: 'Yamaha 304', color: 'green', price: '50000', weight: '478kg', engine_capacity: '780dc', user_id: user.id.to_s)
       expect(status).to eq(201)
     end
   end

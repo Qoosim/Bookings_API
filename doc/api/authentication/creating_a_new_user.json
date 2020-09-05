@@ -40,7 +40,7 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"message\": \"Validation failed: Name can't be blank, Email can't be blank, Password digest can't be blank, Password can't be blank\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
@@ -60,7 +60,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTkzNDk5ODJ9.njua7n1SWcDz_gIINrguE5rZww3hBiiNbEstAhU7564\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

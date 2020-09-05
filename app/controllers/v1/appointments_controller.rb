@@ -35,6 +35,7 @@ class V1::AppointmentsController < ApplicationController
     def appointment_params
       # whitelist params
       params.permit(
+        :user_id,
         :bike_id,
         :date,
         :time,
