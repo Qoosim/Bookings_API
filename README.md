@@ -152,7 +152,7 @@ $ rake docs:generate
 ## 🔊 Contributions, Issues & Forking
 Contributions, issues and feature requests are welcome!
 - Feel free to check for [issues](https://github.com/Qoosim/Bookings_API/issues) page
-- For modification or improvement [Fork it](https://github.com/Qoosim/ror-capstone/fork)
+- For modification or improvement [Fork it](https://github.com/Qoosim/Bookings_API/fork)
 
 ## 🤝 Show Your Support
 
