@@ -102,10 +102,10 @@ To see the list of all the bikes, type below command. Needs no login
 $ http :3000/v1/bikes
 ```
 
-![screenshot](app/assets/images/available_bike.jpeg)
+![screenshot](app/assets/images/available_bikes.jpeg)
 
 #### 🚿 Bikes show
-Below command display a specific bike. No authentication needed
+Below command displays a specific bike. No authentication needed
 
 ```
 $ http :3000/v1/bikes/1
@@ -133,21 +133,21 @@ $ rake docs:generate
 - then type this url ```localhost:3000/api_docs``` in your browser to get to the raddocs documentation
 
 ### 🛠️ Built with
-The project was built using below technologies 👇
-Ruby 2.7.1
-Rails 6.0.3.2
-Rspec
-rspec_api_documentation
-raddocs
-Rubocop
-Stickler
+- The project was built using below technologies 👇
+- Ruby 2.7.1
+- Rails 6.0.3.2
+- Rspec
+- rspec_api_documentation
+- raddocs
+- Rubocop
+- Stickler
 
 ## 👨‍💻 Author
 **Qoosim AbdulGhaniyy**
 
 - Github: [@Qoosim](https://github.com/Qoosim)
 - Twitter: [@qoosim_ayinde](https://twitter.com/qoosim_ayinde)
-- Linkedin: [qoosim_abdulghaniyy](https://www.linkedin.com/in/qoosim)
+- Linkedin: [qoosim](https://www.linkedin.com/in/qoosim)
 
 ## 🔊 Contributions, Issues & Forking
 Contributions, issues and feature requests are welcome!
