@@ -27,6 +27,7 @@ This is a bookings API which is based on an app to book an appointment to try a 
 
 ### 🥡 Get Started
 To get a local copy up and running follow the steps below.
+## [Live Version](https://bookings-bike-api.herokuapp.com/)
 
 ### 🔰 Prerequisites
 
