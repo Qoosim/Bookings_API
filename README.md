@@ -40,6 +40,7 @@ Install all the gems with 👇
 ```
 Setup the database with 👇
 ```
+  $ rails db:create
   $ rails db:migrate
 ```
 
