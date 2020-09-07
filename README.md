@@ -115,7 +115,7 @@ $ http :3000/v1/bikes/1
 
 ![screenshot](app/assets/images/show_bike.jpeg)
 
-##### The Bookings API documentation was built using raddocs
+The Bookings API documentation was built using raddocs
 
 ### 🔬 Run tests
 To run all the test cases at a go, run 👇
