@@ -1,4 +1,3 @@
-
 require 'acceptance_helper'
 
 resource 'Bike', acceptance: true do
@@ -39,7 +38,8 @@ resource 'Bike', acceptance: true do
 
     example_request 'Creating a new bike' do
       explanation 'Creates a new bike requires an admin user to be logged in'
-      do_request(model: 'Yamaha 304', color: 'green', price: '50000', weight: '478kg', engine_capacity: '780dc', user_id: user.id.to_s)
+      do_request(model: 'Yamaha 304', color: 'green', price: '50000',
+                 weight: '478kg', engine_capacity: '780dc', user_id: user.id.to_s)
       expect(status).to eq(201)
     end
   end

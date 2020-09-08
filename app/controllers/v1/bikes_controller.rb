@@ -34,22 +34,22 @@ class V1::BikesController < ApplicationController
 
   private
 
-    def bike_params
-      params.permit(
-        :model, 
-        :color,
-        :price,
-        :weight,
-        :engine_capacity,
-        :user_id
-      )
-    end
+  def bike_params
+    params.permit(
+      :model,
+      :color,
+      :price,
+      :weight,
+      :engine_capacity,
+      :user_id
+    )
+  end
 
-    def set_bike
-      @bike = Bike.find(params[:id])
-    end
+  def set_bike
+    @bike = Bike.find(params[:id])
+  end
 
-    def check_admin
-      render json: { error: "You have no right!" } unless current_user.admin == true
-    end 
+  def check_admin
+    render json: { error: 'You have no right!' } unless current_user.admin == true
+  end
 end

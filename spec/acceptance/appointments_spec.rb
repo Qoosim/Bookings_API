@@ -1,4 +1,3 @@
-
 require 'acceptance_helper'
 
 resource 'Bike', acceptance: true do
