@@ -16,7 +16,7 @@ resource 'Authentication', acceptance: true do
 
     example_request 'Creating a new  User' do
       explanation 'Registers a new user in the database'
-      do_request(name: 'Qoosim', email: 'qoosim@gmail.com', password: 'password', password_confirmation: 'password')
+      do_request(name: 'Alaje', email: 'alaje@gmail.com', password: 'password', password_confirmation: 'password')
       expect(status).to eq(201)
     end
   end
