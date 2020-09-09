@@ -16,6 +16,6 @@ class ApiVersion
   def check_headers(headers)
     # check version from Accept headers; expect custom media type `todos`
     accept = headers[:accept]
-    accept && accept.include?("application/vnd.todos.#{version}+json")
+    accept&.include?("application/vnd.todos.#{version}+json")
   end
 end

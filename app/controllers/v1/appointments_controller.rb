@@ -1,5 +1,5 @@
 class V1::AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :update, :destroy]
+  before_action :set_appointment, only: %i[show update destroy]
 
   # GET /appointments
   def index
@@ -32,16 +32,16 @@ class V1::AppointmentsController < ApplicationController
 
   private
 
-    def appointment_params
-      # whitelist params
-      params.permit(
-        :user_id,
-        :bike_id,
-        :date,
-        :time,
-        :location
-      )
-    end
+  def appointment_params
+    # whitelist params
+    params.permit(
+      :user_id,
+      :bike_id,
+      :date,
+      :time,
+      :location
+    )
+  end
 
   def set_appointment
     @appointment = Appointment.find(params[:id])
