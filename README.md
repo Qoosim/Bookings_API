@@ -27,7 +27,7 @@ This is a bookings API which is based on an app to book an appointment to try a 
 
 ### 🥡 Get Started
 To get a local copy up and running follow the steps below.
-## [Live Version](https://bookings-bike-api.herokuapp.com/)
+### [Live Version](https://bookings-bike-api.herokuapp.com/)
 
 ### 🔰 Prerequisites
 
@@ -72,7 +72,7 @@ $ http :3000/auth/login email=kenny@gmail.com password=password
 ![screenshot](app/assets/images/login.jpeg)
 
 #### 🔧 Create Bike
-To create a new bike, a user needs to be made an admin. 
+To create a new bike, a user needs to be made an admin.
 To do that, open ``` rails console ``` and update the user to be made an admin like 👇
 ```
   $ rails c
